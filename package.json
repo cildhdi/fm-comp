@@ -1,0 +1,36 @@
+{
+  "name": "fm-comp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:cildhdi/fm-comp.git",
+  "author": "cildhdi <miles_yang@foxmail.com>",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.11.0",
+    "@storybook/addon-actions": "^5.3.19",
+    "@storybook/addon-console": "^1.2.1",
+    "@storybook/addon-info": "^5.3.19",
+    "@storybook/addon-knobs": "^5.3.19",
+    "@storybook/addon-links": "^5.3.19",
+    "@storybook/addon-viewport": "^5.3.19",
+    "@storybook/addons": "^5.3.19",
+    "@storybook/preset-typescript": "^3.0.0",
+    "@storybook/react": "^5.3.19",
+    "babel-loader": "^8.1.0",
+    "fork-ts-checker-webpack-plugin": "^5.0.14",
+    "node-sass": "^4.14.1",
+    "react-docgen-typescript-loader": "^3.7.2",
+    "sass-loader": "^9.0.2",
+    "ts-loader": "^8.0.2",
+    "typescript": "^3.9.7"
+  },
+  "peerDependencies": {
+    "react": ">=16.13.1",
+    "react-dom": ">=16.13.1"
+  },
+  "scripts": {
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  }
+}

@@ -1,0 +1,11 @@
+@import "../theme.scss";
+
+.comp-input {
+  padding: 0.5em 0.7em;
+  border: none;
+  outline: 0;
+  border-radius: 0;
+  &:focus {
+    border-bottom: 1px solid $primary-color;
+  }
+}
