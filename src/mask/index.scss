@@ -1,0 +1,17 @@
+@import "../theme.scss";
+
+.comp-mask {
+  animation-iteration-count: 2;
+  animation-direction: alternate;
+  animation-fill-mode: both;
+}
+
+@keyframes anim-mask {
+  from {
+    background-color: rgba($color: $white-hover-color, $alpha: 0);
+  }
+
+  to {
+    background-color: rgba($color: $white-hover-color, $alpha: 0.5);
+  }
+}

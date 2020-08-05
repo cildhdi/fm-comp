@@ -1,9 +1,9 @@
 import React from "react";
 import "./index.scss";
 import { classnames } from "../util/classnames";
-import { ClassNameProp } from "common";
+import { StyleProp } from "common";
 
-interface Props extends ClassNameProp {
+interface Props extends StyleProp {
   type?: "primary" | "secondary";
   size?: "big" | "medium" | "small";
   onClick?: () => void;
@@ -24,6 +24,7 @@ export class Button extends React.Component<Props> {
         )}
         onClick={this.props.onClick}
         disabled={this.props.disabled}
+        style={this.props.style}
       >
         {this.props.children}
       </button>

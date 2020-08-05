@@ -1,15 +1,16 @@
 module.exports = {
-  addons: ['@storybook/addon-viewport/register'],
+  addons: [
+    '@storybook/addon-viewport/register',
+    '@storybook/addon-knobs/register',
+    '@storybook/addon-actions/register'
+  ],
   stories: ['../src/**/*.stories.tsx'],
   webpackFinal: async config => {
     config.module.rules.push({
       test: /\.(ts|tsx)$/,
       use: [{
         loader: "ts-loader"
-      }, {
-        loader: "react-docgen-typescript-loader"
-      },
-      ],
+      }],
     }, {
       test: /\.scss$/,
       use: [{

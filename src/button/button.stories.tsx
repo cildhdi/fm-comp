@@ -2,17 +2,17 @@ import React from "react";
 import { Button } from ".";
 
 export default {
-  title: "Button",
+  title: "Button 按钮",
 };
 
-export const ButtonType = () => (
+export const Type = () => (
   <>
     <Button type="primary">primary 按钮</Button>{" "}
     <Button type="secondary">secondary 按钮</Button>
   </>
 );
 
-export const ButtonSize = () => (
+export const Size = () => (
   <>
     <Button type="primary" size="big">
       big 按钮
@@ -26,11 +26,11 @@ export const ButtonSize = () => (
   </>
 );
 
-export const ButtonClick = () => (
+export const Click = () => (
   <Button onClick={() => console.log("button click")}>按钮点击</Button>
 );
 
-export const ButtonDisabled = () => (
+export const Disabled = () => (
   <Button disabled onClick={() => console.log("button click")}>
     按钮点击
   </Button>
