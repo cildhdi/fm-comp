@@ -12,8 +12,6 @@ function parseParams(params: string) {
   return result;
 }
 
-(document as any).pp = parseParams;
-
 interface BBEle {
   betype: "br" | "tag" | "closetag" | "text";
   tag?: string;
@@ -116,8 +114,6 @@ const parseBBCODE = (text: string) => {
           case "br":
             reStack.push(React.createElement("br"));
             break;
-          case "pic":
-          //TODO 表情包 reStack.push(React.createElement('img', ...)); break;
           default:
             reStack.push(be);
             break;
