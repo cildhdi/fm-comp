@@ -47,27 +47,33 @@ export class Mask extends React.Component<
 
   render() {
     return (
-      <div
-        ref={this.ref}
-        className={classnames("comp-mask", this.props.className)}
-        style={{
-          animationName: `anim-mask`,
-          animationPlayState: this.state.pause ? "paused" : "running",
-          animationDelay: `${this.props.animationDelay || 0}s`,
-          animationDuration: `${this.props.animationDuration || 1}s`,
-          ...this.props.style,
-        }}
-        onClick={this.hide}
-      >
+      <div className={classnames("comp-mask", this.props.className)}>
         <div
-          className="children"
-          style={
-            this.props.align && {
-              [this.props.align]: 0,
+          ref={this.ref}
+          className="anim"
+          style={{
+            animationName: `anim-mask`,
+            animationPlayState: this.state.pause ? "paused" : "running",
+            animationDelay: `${this.props.animationDelay || 0}s`,
+            animationDuration: `${this.props.animationDuration || 1}s`,
+            ...this.props.style,
+          }}
+          onClick={(e) => {
+            if (e.target === e.currentTarget) {
+              this.hide();
             }
-          }
+          }}
         >
-          {this.props.children}
+          <div
+            className="children"
+            style={
+              this.props.align && {
+                [this.props.align]: 0,
+              }
+            }
+          >
+            {this.props.children}
+          </div>
         </div>
       </div>
     );

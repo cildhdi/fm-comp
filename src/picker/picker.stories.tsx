@@ -95,6 +95,56 @@ export const Multi = () =>
               },
               {
                 key: "2",
+                items: () => generateItems(10),
+              },
+              {
+                key: "3",
+                items: () => generateItems(10),
+              },
+            ]}
+          />
+        );
+      }
+    }
+  );
+
+export const Multi2 = () =>
+  React.createElement(
+    class extends React.Component<
+      {},
+      {
+        showPicker: boolean;
+      }
+    > {
+      public state = {
+        showPicker: false,
+      };
+
+      public show = () => {
+        this.setState({ showPicker: true });
+      };
+
+      public confirm = (v: any) => {
+        this.setState({ showPicker: false });
+        console.log(v);
+      };
+
+      public render() {
+        return !this.state.showPicker ? (
+          <button onClick={this.show}>显示 Picker</button>
+        ) : (
+          <Picker
+            onClose={this.confirm}
+            style={{
+              height: "90vh",
+            }}
+            columnOpts={[
+              {
+                key: "1",
+                items: () => generateItems(10),
+              },
+              {
+                key: "2",
                 items: (selectedValue) =>
                   selectedValue["1"]
                     ? generateItems(Number.parseInt(selectedValue["1"]))

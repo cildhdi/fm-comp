@@ -1,7 +1,12 @@
 .comp-slide {
-  animation-iteration-count: 2;
-  animation-direction: alternate;
-  animation-fill-mode: both;
+  overflow: hidden;
+  .anim {
+    width: 100%;
+    height: 100%;
+    animation-iteration-count: 2;
+    animation-direction: alternate;
+    animation-fill-mode: both;
+  }
 }
 
 @keyframes anim-top {

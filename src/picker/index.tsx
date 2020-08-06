@@ -124,7 +124,6 @@ export class Picker extends React.Component<Props, State> {
   };
 
   private onEnd = () => {
-    console.log(this.state.confirm);
     this.props.onClose(
       this.state.confirm ? this.state.selectedValue : undefined
     );

@@ -54,17 +54,19 @@ export class Slide extends React.Component<Props, State> {
 
   render() {
     return (
-      <div
-        ref={this.ref}
-        className={classnames("comp-slide", this.props.className)}
-        style={{
-          animationName: `anim-${this.props.from}`,
-          animationPlayState: this.state.pause ? "paused" : "running",
-          animationDelay: `${this.props.animationDelay || 0}s`,
-          animationDuration: `${this.props.animationDuration || 1}s`,
-        }}
-      >
-        {this.props.children}
+      <div className={classnames("comp-slide", this.props.className)}>
+        <div
+          ref={this.ref}
+          className="anim"
+          style={{
+            animationName: `anim-${this.props.from}`,
+            animationPlayState: this.state.pause ? "paused" : "running",
+            animationDelay: `${this.props.animationDelay || 0}s`,
+            animationDuration: `${this.props.animationDuration || 1}s`,
+          }}
+        >
+          {this.props.children}
+        </div>
       </div>
     );
   }
