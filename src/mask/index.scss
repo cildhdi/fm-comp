@@ -4,6 +4,11 @@
   animation-iteration-count: 2;
   animation-direction: alternate;
   animation-fill-mode: both;
+  position: relative;
+  .children {
+    position: absolute;
+    width: 100%;
+  }
 }
 
 @keyframes anim-mask {

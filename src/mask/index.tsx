@@ -8,7 +8,15 @@ interface State {
   pause: boolean;
 }
 
-export class Mask extends React.Component<StyleProp & AnimationProp, State> {
+interface Props {
+  onClick?: () => void;
+  align?: "left" | "right" | "top" | "bottom";
+}
+
+export class Mask extends React.Component<
+  StyleProp & AnimationProp & Props,
+  State
+> {
   ref = React.createRef<HTMLDivElement>();
   state: State = {
     pause: false,
@@ -34,14 +42,14 @@ export class Mask extends React.Component<StyleProp & AnimationProp, State> {
   };
 
   hide = () => {
-    this.setState({ pause: false });
+    this.setState({ pause: false }, this.props.onClick);
   };
 
   render() {
     return (
       <div
         ref={this.ref}
-        className={classnames("comp-slide", this.props.className, "center")}
+        className={classnames("comp-mask", this.props.className)}
         style={{
           animationName: `anim-mask`,
           animationPlayState: this.state.pause ? "paused" : "running",
@@ -51,7 +59,16 @@ export class Mask extends React.Component<StyleProp & AnimationProp, State> {
         }}
         onClick={this.hide}
       >
-        {this.props.children}
+        <div
+          className="children"
+          style={
+            this.props.align && {
+              [this.props.align]: 0,
+            }
+          }
+        >
+          {this.props.children}
+        </div>
       </div>
     );
   }
