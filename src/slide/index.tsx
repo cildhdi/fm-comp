@@ -62,7 +62,7 @@ export class Slide extends React.Component<Props, State> {
             animationName: `anim-${this.props.from}`,
             animationPlayState: this.state.pause ? "paused" : "running",
             animationDelay: `${this.props.animationDelay || 0}s`,
-            animationDuration: `${this.props.animationDuration || 1}s`,
+            animationDuration: `${this.props.animationDuration || 0.5}s`,
           }}
         >
           {this.props.children}

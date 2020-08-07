@@ -1,0 +1,31 @@
+@import "../theme.scss";
+
+.comp-actionsheet {
+  width: 100%;
+  .content {
+    text-align: center;
+    width: 100%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    .indicator {
+      margin: 10px auto;
+      width: 15%;
+      height: 6px;
+      border-radius: 3px;
+      background-color: $white-hover-color;
+    }
+    .as-title {
+      font-size: $medium-font-size;
+      color: $white-hover-color;
+      padding: 0.8em 1.5em;
+    }
+    .item {
+      padding: 0.8em 1.5em;
+      cursor: pointer;
+      border-top: 1px solid rgba($border-color, 0.5);
+      &:hover {
+        background-color: $backgroud-color;
+      }
+    }
+  }
+}

@@ -55,7 +55,7 @@ export class Mask extends React.Component<
             animationName: `anim-mask`,
             animationPlayState: this.state.pause ? "paused" : "running",
             animationDelay: `${this.props.animationDelay || 0}s`,
-            animationDuration: `${this.props.animationDuration || 1}s`,
+            animationDuration: `${this.props.animationDuration || 0.5}s`,
             ...this.props.style,
           }}
           onClick={(e) => {

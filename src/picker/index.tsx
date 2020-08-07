@@ -1,7 +1,7 @@
 import React from "react";
 import { Slide } from "../slide";
 import "./index.scss";
-import { AnimationProp, StyleProp } from "common";
+import { StyleProp } from "common";
 import { Mask } from "../mask";
 
 export interface Item {
@@ -76,7 +76,7 @@ interface ColumnOpt {
   items: (selectedValue: SelectedValueType) => Item[];
 }
 
-interface Props extends AnimationProp, StyleProp {
+interface Props extends StyleProp {
   itemHeight?: number;
   height?: number;
   onClose: (selectedValue?: SelectedValueType) => void;
